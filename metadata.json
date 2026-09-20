@@ -1,0 +1,6 @@
+{
+  "name": "Aunicorn - Neurodivergent & LGBTQ+ Executive Assistant",
+  "description": "A sensory-safe executive flow assistant for neurodivergent (autistic, ADHD) women, LGBTQ+, and non-binary people. Features AI task slicing, spoon tracking, focus audio, and gentle routines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
