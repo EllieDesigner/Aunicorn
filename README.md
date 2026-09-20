@@ -2,6 +2,9 @@
 
 # 🦄 Aunicorn (`aunicorn-app`)
 ### *Your magic companion — gentle, neuro-affirming daily rhythm.*
+<img width="256" height="186" alt="Aunicorn logo app" src="https://github.com/user-attachments/assets/bffa0744-3d24-4c8a-9acb-a74b4c11951f" 
+  />
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 [![Accessibility: AAA](https://img.shields.io/badge/Accessibility-WCAG%20AAA-success?style=flat-square)](https://www.w3.org/WAI/standards-guidelines/wcag/)
