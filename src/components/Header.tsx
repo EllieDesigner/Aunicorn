@@ -43,9 +43,10 @@ export const Header: React.FC<HeaderProps> = ({
           
           <div className="flex items-center gap-2">
             <img
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Wry_clvL8eY7k5TTGMuaK5OVxCMsjqybdb1iygYcwr6eInlQYu75J66yI6d8HbfbkR9hGr6bEKguPyOPSpUhzp3BbolkYE9PQby7yCPqynVfUr5IPc0DXRju9-zS5wWf-j9_YPrDEA4ig2ig8A3kRi0VTnOlC-JzIU8pYQrP6oI6LOVyHiMPBrrXhkqW-fShJIGLvF60MO9NpI3J8m6RqBbCyU2giMgu8OJE0lN8wQsSJq7TnHtdL32w"
+              src="/assets/aunicorn-logo.svg"
               alt="Aunicorn logo"
               className="h-7 w-auto object-contain drop-shadow"
+              referrerPolicy="no-referrer"
             />
             <span className="font-bold text-[18px] text-[#f7f7fa] tracking-wide hidden xs:inline">
               Aunicorn

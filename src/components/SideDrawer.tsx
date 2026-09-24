@@ -43,7 +43,8 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
             <img
               alt="Aunicorn logo"
               className="h-8 w-auto object-contain"
-              src="https://lh3.googleusercontent.com/aida/AEtjO1Wry_clvL8eY7k5TTGMuaK5OVxCMsjqybdb1iygYcwr6eInlQYu75J66yI6d8HbfbkR9hGr6bEKguPyOPSpUhzp3BbolkYE9PQby7yCPqynVfUr5IPc0DXRju9-zS5wWf-j9_YPrDEA4ig2ig8A3kRi0VTnOlC-JzIU8pYQrP6oI6LOVyHiMPBrrXhkqW-fShJIGLvF60MO9NpI3J8m6RqBbCyU2giMgu8OJE0lN8wQsSJq7TnHtdL32w"
+              src="/assets/aunicorn-logo.svg"
+              referrerPolicy="no-referrer"
             />
             <div className="flex flex-col">
               <span className="font-bold text-[17px] text-[#f7f7fa] tracking-wide">

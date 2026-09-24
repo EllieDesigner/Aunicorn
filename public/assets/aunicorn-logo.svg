@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 560" width="100%" height="100%" fill="none">
+  <defs>
+    <!-- Primary vibrant neurodiversity violet-to-cyan gradient matching uploaded logo -->
+    <linearGradient id="aunicorn-gradient" x1="10%" y1="30%" x2="90%" y2="70%">
+      <stop offset="0%" stop-color="#8F5FE8" />
+      <stop offset="25%" stop-color="#7952EC" />
+      <stop offset="50%" stop-color="#5570ED" />
+      <stop offset="75%" stop-color="#00A8FF" />
+      <stop offset="100%" stop-color="#00C2FF" />
+    </linearGradient>
+
+    <!-- Star gradient for outer accents -->
+    <linearGradient id="star-violet" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#A875FF" />
+      <stop offset="100%" stop-color="#8F5FE8" />
+    </linearGradient>
+    <linearGradient id="star-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00D2FF" />
+      <stop offset="100%" stop-color="#0099FF" />
+    </linearGradient>
+  </defs>
+
+  <g id="aunicorn-emblem" stroke="url(#aunicorn-gradient)" stroke-linecap="round" stroke-linejoin="round">
+    
+    <!-- Outer accent sparkle: top-left -->
+    <path d="M 125,175 Q 125,195 105,195 Q 125,195 125,215 Q 125,195 145,195 Q 125,195 125,175 Z"
+          fill="url(#star-violet)" stroke="none" />
+
+    <!-- Outer accent sparkle: top-right -->
+    <path d="M 660,165 Q 660,185 640,185 Q 660,185 660,205 Q 660,185 680,185 Q 660,185 660,165 Z"
+          fill="url(#star-cyan)" stroke="none" />
+
+    <!-- Unicorn Horn (angled upward-forward with characteristic ridges) -->
+    <path d="M 155,152 L 205,248 L 175,260 Z"
+          stroke-width="9" fill="none" />
+    <!-- Horn internal ridges -->
+    <line x1="172" y1="185" x2="190" y2="192" stroke-width="6" />
+    <line x1="182" y1="210" x2="199" y2="218" stroke-width="6" />
+    <line x1="190" y1="234" x2="204" y2="241" stroke-width="6" />
+
+    <!-- Unicorn Ear -->
+    <path d="M 230,225 C 230,195 250,180 258,192 C 265,205 255,240 248,252"
+          stroke-width="9" fill="none" />
+
+    <!-- Unicorn Forehead, Snout, Muzzle and Jaw -->
+    <path d="M 185,258 
+             C 175,275 160,315 155,335 
+             C 152,345 158,358 172,358 
+             C 190,358 202,340 215,320 
+             C 228,300 242,282 260,270"
+          stroke-width="9.5" fill="none" />
+
+    <!-- Unicorn Peaceful Closed Eye -->
+    <path d="M 205,282 Q 217,294 230,285"
+          stroke-width="7" fill="none" />
+
+    <!-- Unicorn Neck & Throat contour -->
+    <path d="M 242,320 C 252,345 252,370 240,400"
+          stroke-width="9" fill="none" />
+
+    <!-- Unicorn Flowing Mane strands -->
+    <path d="M 245,215 C 280,215 340,250 375,305"
+          stroke-width="9" fill="none" />
+    <path d="M 265,248 C 305,255 350,290 380,335"
+          stroke-width="7.5" fill="none" />
+
+    <!-- Main Infinity Ribbon Loop (crossing smoothly through center) -->
+    <!-- Left loop coming up around unicorn -->
+    <path d="M 390,330 
+             C 320,385 240,445 170,410 
+             C 115,380 110,290 155,230 
+             C 175,202 210,185 245,188"
+          stroke-width="12" fill="none" />
+
+    <!-- Outer echo accent curve on left lower ribbon -->
+    <path d="M 140,345 C 130,375 150,425 200,432 C 240,438 310,395 380,345"
+          stroke-width="6" fill="none" opacity="0.85" />
+
+    <!-- Infinity loop crossing from left-center to right side, then looping back -->
+    <path d="M 390,330 
+             C 470,255 580,225 660,280 
+             C 715,320 705,420 625,450 
+             C 545,480 455,410 395,335"
+          stroke-width="12" fill="none" />
+
+    <!-- Outer echo accent curve on right loop -->
+    <path d="M 570,238 C 640,238 720,280 720,350 C 720,415 650,470 580,465"
+          stroke-width="6" fill="none" opacity="0.85" />
+
+    <!-- Inside Right Loop: Constellation & Neurodivergent Sparkles -->
+    <!-- Constellation Node Dot -->
+    <circle cx="452" cy="385" r="7.5" fill="url(#star-cyan)" stroke="none" />
+    
+    <!-- Constellation connecting line -->
+    <line x1="458" y1="382" x2="540" y2="352" stroke-width="4.5" opacity="0.85" />
+
+    <!-- Constellation Star 1 -->
+    <path d="M 552,335 Q 552,350 537,350 Q 552,350 552,365 Q 552,350 567,350 Q 552,350 552,335 Z"
+          fill="url(#star-cyan)" stroke="none" />
+
+    <!-- Constellation Star 2 (upper) -->
+    <path d="M 590,290 Q 590,305 575,305 Q 590,305 590,320 Q 590,305 605,305 Q 590,305 590,290 Z"
+          fill="url(#star-cyan)" stroke="none" />
+
+    <!-- Constellation Star 3 (lower right) -->
+    <path d="M 618,365 Q 618,382 601,382 Q 618,382 618,399 Q 618,382 635,382 Q 618,382 618,365 Z"
+          fill="url(#star-cyan)" stroke="none" />
+
+  </g>
+</svg>
