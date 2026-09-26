@@ -15,7 +15,7 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
   isOpen,
   onClose,
   userProfile,
-  theme = 'light',
+  theme = 'dark',
   onSelectTheme,
   onSaveProfile,
 }) => {
@@ -141,27 +141,27 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
             <div className="grid grid-cols-2 gap-2 p-1 rounded-lg bg-[#1b1b25] border border-[#2c2c3a]">
               <button
                 type="button"
-                onClick={() => setFormData({ ...formData, theme: 'light' })}
-                className={`flex items-center justify-center gap-2 py-1.5 px-3 rounded-md text-[13px] font-medium transition-all ${
-                  (formData.theme || 'light') === 'light'
-                    ? 'bg-[#5e6ad2] text-white shadow-sm'
-                    : 'text-[#a8adb8] hover:text-[#f7f7fa]'
-                }`}
-              >
-                <span className="material-symbols-outlined text-[17px]">light_mode</span>
-                <span>Light (Default)</span>
-              </button>
-              <button
-                type="button"
                 onClick={() => setFormData({ ...formData, theme: 'dark' })}
                 className={`flex items-center justify-center gap-2 py-1.5 px-3 rounded-md text-[13px] font-medium transition-all ${
-                  formData.theme === 'dark'
+                  (formData.theme || 'dark') === 'dark'
                     ? 'bg-[#5e6ad2] text-white shadow-sm'
                     : 'text-[#a8adb8] hover:text-[#f7f7fa]'
                 }`}
               >
                 <span className="material-symbols-outlined text-[17px]">dark_mode</span>
-                <span>Dark</span>
+                <span>Dark (Default)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFormData({ ...formData, theme: 'light' })}
+                className={`flex items-center justify-center gap-2 py-1.5 px-3 rounded-md text-[13px] font-medium transition-all ${
+                  formData.theme === 'light'
+                    ? 'bg-[#5e6ad2] text-white shadow-sm'
+                    : 'text-[#a8adb8] hover:text-[#f7f7fa]'
+                }`}
+              >
+                <span className="material-symbols-outlined text-[17px]">light_mode</span>
+                <span>Light</span>
               </button>
             </div>
           </div>

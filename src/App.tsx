@@ -11,7 +11,7 @@ import { DashboardView } from './views/DashboardView';
 import { HealthAreaView } from './views/HealthAreaView';
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState<ActiveTab>('activities-area');
+  const [activeTab, setActiveTab] = useState<ActiveTab>('dashboard');
   const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(false);
   const [isSensoryResetOpen, setIsSensoryResetOpen] = useState<boolean>(false);
   const [isPreferencesOpen, setIsPreferencesOpen] = useState<boolean>(false);
@@ -22,7 +22,7 @@ export default function App() {
   const [chores, setChores] = useState<ChoreItem[]>(() => storage.getChores());
   const [reminders, setReminders] = useState<LifeReminder[]>(() => storage.getReminders());
 
-  const currentTheme = userProfile.theme || 'light';
+  const currentTheme = userProfile.theme || 'dark';
 
   // Synchronize documentElement theme class and color-scheme
   useEffect(() => {

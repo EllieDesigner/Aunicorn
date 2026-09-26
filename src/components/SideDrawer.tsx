@@ -105,6 +105,20 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
           <div className="grid grid-cols-2 gap-2 p-1 rounded-xl bg-[#1b1b25] border border-[#2c2c3a]/70">
             <button
               type="button"
+              id="sidebar-theme-dark"
+              onClick={() => onSelectTheme('dark')}
+              aria-pressed={theme === 'dark'}
+              className={`flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-[13px] font-semibold transition-all cursor-pointer ${
+                theme === 'dark'
+                  ? 'bg-[#5e6ad2] text-white shadow-sm ring-1 ring-[#5e6ad2]/50'
+                  : 'text-[#a8adb8] hover:text-[#f7f7fa] hover:bg-[#1f1f2e]'
+              }`}
+            >
+              <span className="material-symbols-outlined text-[18px]">dark_mode</span>
+              <span>Dark (Default)</span>
+            </button>
+            <button
+              type="button"
               id="sidebar-theme-light"
               onClick={() => onSelectTheme('light')}
               aria-pressed={theme === 'light'}
@@ -116,20 +130,6 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
             >
               <span className="material-symbols-outlined text-[18px]">light_mode</span>
               <span>Light Mode</span>
-            </button>
-            <button
-              type="button"
-              id="sidebar-theme-dark"
-              onClick={() => onSelectTheme('dark')}
-              aria-pressed={theme === 'dark'}
-              className={`flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-[13px] font-semibold transition-all cursor-pointer ${
-                theme === 'dark'
-                  ? 'bg-[#5e6ad2] text-white shadow-sm ring-1 ring-[#5e6ad2]/50'
-                  : 'text-[#a8adb8] hover:text-[#f7f7fa] hover:bg-[#1f1f2e]'
-              }`}
-            >
-              <span className="material-symbols-outlined text-[18px]">dark_mode</span>
-              <span>Dark Mode</span>
             </button>
           </div>
           <p className="text-[11px] text-[#a8adb8] leading-tight">

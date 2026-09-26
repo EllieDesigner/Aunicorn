@@ -15,7 +15,7 @@ const DEFAULT_PROFILE: UserProfile = {
   stateText: 'Calmed • Low Stim',
   spoons: 3,
   maxSpoons: 5,
-  theme: 'light',
+  theme: 'dark',
   lowStimMode: false,
   soundEnabled: true,
   brownNoiseVolume: 0.35,
@@ -164,7 +164,7 @@ export const storage = {
       return {
         ...DEFAULT_PROFILE,
         ...parsed,
-        theme: (parsed.theme === 'dark' || parsed.theme === 'light') ? parsed.theme : 'light',
+        theme: (parsed.theme === 'dark' || parsed.theme === 'light') ? parsed.theme : 'dark',
       };
     } catch {
       return DEFAULT_PROFILE;
@@ -173,7 +173,7 @@ export const storage = {
 
   getTheme(): 'light' | 'dark' {
     const profile = this.getProfile();
-    return profile.theme || 'light';
+    return profile.theme || 'dark';
   },
 
   saveTheme(theme: 'light' | 'dark') {
