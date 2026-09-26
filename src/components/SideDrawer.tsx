@@ -7,6 +7,8 @@ interface SideDrawerProps {
   activeTab: ActiveTab;
   onSelectTab: (tab: ActiveTab) => void;
   userProfile: UserProfile;
+  theme: 'light' | 'dark';
+  onSelectTheme: (theme: 'light' | 'dark') => void;
   onOpenSensoryReset: () => void;
   onOpenPreferences: () => void;
   onOpenNotifications: () => void;
@@ -19,6 +21,8 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
   activeTab,
   onSelectTab,
   userProfile,
+  theme,
+  onSelectTheme,
   onOpenSensoryReset,
   onOpenPreferences,
   onOpenNotifications,
@@ -84,6 +88,53 @@ export const SideDrawer: React.FC<SideDrawerProps> = ({
               {userProfile.stateText}
             </span>
           </div>
+        </div>
+
+        {/* Theme Mode Selection Option */}
+        <div className="mx-4 mt-3 p-3 rounded-xl bg-[#1f1f2e] border border-[#2c2c3a] flex flex-col gap-2.5">
+          <div className="flex items-center justify-between">
+            <span className="text-[12px] font-semibold text-[#8f5fe8] uppercase tracking-wider flex items-center gap-1.5">
+              <span className="material-symbols-outlined text-[17px]">palette</span>
+              Theme Mode
+            </span>
+            <span className="text-[11px] font-medium text-[#00c2ff] bg-[#1b1b25] px-2 py-0.5 rounded-full border border-[#2c2c3a]">
+              {theme === 'light' ? '☀️ Light Mode' : '🌙 Dark Mode'}
+            </span>
+          </div>
+
+          <div className="grid grid-cols-2 gap-2 p-1 rounded-xl bg-[#1b1b25] border border-[#2c2c3a]/70">
+            <button
+              type="button"
+              id="sidebar-theme-light"
+              onClick={() => onSelectTheme('light')}
+              aria-pressed={theme === 'light'}
+              className={`flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-[13px] font-semibold transition-all cursor-pointer ${
+                theme === 'light'
+                  ? 'bg-[#5e6ad2] text-white shadow-sm ring-1 ring-[#5e6ad2]/50'
+                  : 'text-[#a8adb8] hover:text-[#f7f7fa] hover:bg-[#1f1f2e]'
+              }`}
+            >
+              <span className="material-symbols-outlined text-[18px]">light_mode</span>
+              <span>Light Mode</span>
+            </button>
+            <button
+              type="button"
+              id="sidebar-theme-dark"
+              onClick={() => onSelectTheme('dark')}
+              aria-pressed={theme === 'dark'}
+              className={`flex items-center justify-center gap-2 py-2 px-3 rounded-lg text-[13px] font-semibold transition-all cursor-pointer ${
+                theme === 'dark'
+                  ? 'bg-[#5e6ad2] text-white shadow-sm ring-1 ring-[#5e6ad2]/50'
+                  : 'text-[#a8adb8] hover:text-[#f7f7fa] hover:bg-[#1f1f2e]'
+              }`}
+            >
+              <span className="material-symbols-outlined text-[18px]">dark_mode</span>
+              <span>Dark Mode</span>
+            </button>
+          </div>
+          <p className="text-[11px] text-[#a8adb8] leading-tight">
+            Sensory-friendly lighting designed to prevent visual overload and fatigue.
+          </p>
         </div>
 
         {/* Navigation Sections */}

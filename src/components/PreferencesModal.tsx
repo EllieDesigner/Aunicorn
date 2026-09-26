@@ -6,6 +6,8 @@ interface PreferencesModalProps {
   isOpen: boolean;
   onClose: () => void;
   userProfile: UserProfile;
+  theme?: 'light' | 'dark';
+  onSelectTheme?: (theme: 'light' | 'dark') => void;
   onSaveProfile: (profile: UserProfile) => void;
 }
 
@@ -13,6 +15,8 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
   isOpen,
   onClose,
   userProfile,
+  theme = 'light',
+  onSelectTheme,
   onSaveProfile,
 }) => {
   const [formData, setFormData] = useState<UserProfile>(userProfile);
@@ -22,6 +26,9 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
 
   const handleSave = () => {
     storage.saveProfile(formData);
+    if (formData.theme && onSelectTheme && formData.theme !== theme) {
+      onSelectTheme(formData.theme);
+    }
     onSaveProfile(formData);
     onClose();
   };
@@ -117,8 +124,47 @@ export const PreferencesModal: React.FC<PreferencesModalProps> = ({
         {/* Sensory Controls */}
         <div className="flex flex-col gap-3 pt-2 border-t border-[#2c2c3a]">
           <span className="text-[12px] font-semibold text-[#00c2ff] uppercase tracking-wider">
-            Sensory Comfort
+            Sensory Comfort &amp; Theme
           </span>
+
+          {/* Theme Selector */}
+          <div className="flex flex-col gap-2 p-3 rounded-xl bg-[#1f1f2e] border border-[#2c2c3a]">
+            <div className="flex items-center justify-between">
+              <span className="text-[14px] font-semibold text-[#f7f7fa] flex items-center gap-1.5">
+                <span className="material-symbols-outlined text-[18px] text-[#8f5fe8]">palette</span>
+                Theme Display Mode
+              </span>
+              <span className="text-[12px] text-[#00c2ff] font-medium capitalize">
+                {formData.theme === 'dark' ? 'Dark Mode' : 'Light Mode'}
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-2 p-1 rounded-lg bg-[#1b1b25] border border-[#2c2c3a]">
+              <button
+                type="button"
+                onClick={() => setFormData({ ...formData, theme: 'light' })}
+                className={`flex items-center justify-center gap-2 py-1.5 px-3 rounded-md text-[13px] font-medium transition-all ${
+                  (formData.theme || 'light') === 'light'
+                    ? 'bg-[#5e6ad2] text-white shadow-sm'
+                    : 'text-[#a8adb8] hover:text-[#f7f7fa]'
+                }`}
+              >
+                <span className="material-symbols-outlined text-[17px]">light_mode</span>
+                <span>Light (Default)</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => setFormData({ ...formData, theme: 'dark' })}
+                className={`flex items-center justify-center gap-2 py-1.5 px-3 rounded-md text-[13px] font-medium transition-all ${
+                  formData.theme === 'dark'
+                    ? 'bg-[#5e6ad2] text-white shadow-sm'
+                    : 'text-[#a8adb8] hover:text-[#f7f7fa]'
+                }`}
+              >
+                <span className="material-symbols-outlined text-[17px]">dark_mode</span>
+                <span>Dark</span>
+              </button>
+            </div>
+          </div>
 
           <label className="flex items-center justify-between p-3 rounded-xl bg-[#1f1f2e] cursor-pointer">
             <div className="flex flex-col">

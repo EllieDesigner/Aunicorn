@@ -22,10 +22,33 @@ export default function App() {
   const [chores, setChores] = useState<ChoreItem[]>(() => storage.getChores());
   const [reminders, setReminders] = useState<LifeReminder[]>(() => storage.getReminders());
 
+  const currentTheme = userProfile.theme || 'light';
+
+  // Synchronize documentElement theme class and color-scheme
+  useEffect(() => {
+    const root = document.documentElement;
+    if (currentTheme === 'dark') {
+      root.classList.add('dark');
+      root.classList.remove('light');
+      root.style.colorScheme = 'dark';
+    } else {
+      root.classList.add('light');
+      root.classList.remove('dark');
+      root.style.colorScheme = 'light';
+    }
+  }, [currentTheme]);
+
   // Save changes to storage
   const handleUpdateProfile = (newProfile: UserProfile) => {
     setUserProfile(newProfile);
     storage.saveProfile(newProfile);
+  };
+
+  const handleSelectTheme = (newTheme: 'light' | 'dark') => {
+    const updated = { ...userProfile, theme: newTheme };
+    handleUpdateProfile(updated);
+    storage.saveTheme(newTheme);
+    showToast(`Switched to ${newTheme === 'light' ? 'Light Mode (Gentle)' : 'Dark Mode (Calm)'}`);
   };
 
   const handleUpdateBreakdown = (newBreakdown: TaskBreakdown) => {
@@ -68,13 +91,15 @@ export default function App() {
 
   return (
     <div
-      className={`min-h-screen flex flex-col bg-[#101014] text-[#e3e1ef] font-sans ${
-        userProfile.lowStimMode ? 'contrast-90' : ''
-      }`}
+      className={`min-h-screen flex flex-col font-sans transition-colors duration-150 ${
+        currentTheme === 'dark' ? 'bg-[#101014] text-[#e3e1ef]' : 'bg-[#f6f7fb] text-[#1e1e2f]'
+      } ${userProfile.lowStimMode ? 'contrast-90' : ''}`}
     >
       {/* Top Header */}
       <Header
         activeTab={activeTab}
+        theme={currentTheme}
+        onSelectTheme={handleSelectTheme}
         onOpenDrawer={() => setIsDrawerOpen(true)}
         onOpenSensoryReset={() => setIsSensoryResetOpen(true)}
         onOpenPreferences={() => setIsPreferencesOpen(true)}
@@ -87,6 +112,8 @@ export default function App() {
         activeTab={activeTab}
         onSelectTab={setActiveTab}
         userProfile={userProfile}
+        theme={currentTheme}
+        onSelectTheme={handleSelectTheme}
         onOpenSensoryReset={() => setIsSensoryResetOpen(true)}
         onOpenPreferences={() => setIsPreferencesOpen(true)}
         onOpenNotifications={handleOpenNotifications}
@@ -145,6 +172,8 @@ export default function App() {
         isOpen={isPreferencesOpen}
         onClose={() => setIsPreferencesOpen(false)}
         userProfile={userProfile}
+        theme={currentTheme}
+        onSelectTheme={handleSelectTheme}
         onSaveProfile={handleUpdateProfile}
       />
 

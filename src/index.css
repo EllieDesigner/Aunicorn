@@ -2,43 +2,37 @@
 
 @theme {
   --font-sans: 'Atkinson Hyperlegible', sans-serif;
-  --color-canvas: #101014;
-  --color-surface: #12121c;
-  --color-surface-dim: #12121c;
-  --color-surface-container-lowest: #0d0d17;
-  --color-surface-container-low: #1b1b25;
-  --color-surface-container: #1f1f29;
-  --color-surface-container-high: #292933;
-  --color-surface-container-highest: #34343f;
-  --color-surface-elevated: #1f1f2e;
-  --color-surface-overlay: #252536;
-  --color-border-subtle: #2c2c3a;
-  --color-border-prominent: #4a4a62;
-  --color-text-primary: #f7f7fa;
-  --color-text-secondary: #a8adb8;
+  --color-canvas: #f6f7fb;
+  --color-surface: #ffffff;
+  --color-surface-dim: #f0f2f8;
+  --color-surface-elevated: #f0f2f8;
+  --color-border-subtle: #e2e5ef;
+  --color-border-prominent: #cbd0e2;
+  --color-text-primary: #141522;
+  --color-text-secondary: #5f647c;
   --color-cosmic-violet: #8f5fe8;
   --color-cosmic-cyan: #00c2ff;
-  --color-primary: #bdc2ff;
+  --color-primary: #5e6ad2;
   --color-primary-container: #5e6ad2;
-  --color-on-primary-container: #fdfaff;
-  --color-secondary: #4cd6fb;
   --color-tertiary: #49e095;
-  --color-tertiary-container: #008551;
-  --color-on-tertiary-container: #f1fff2;
   --color-warning-gold: #f0c000;
   --color-error-coral: #eb5757;
-  --color-on-surface: #e3e1ef;
-  --color-on-surface-variant: #c6c5d5;
 }
 
 :root {
-  color-scheme: dark;
   font-family: 'Atkinson Hyperlegible', sans-serif;
+  color-scheme: light;
+}
+
+html.light {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
-  background-color: #101014;
-  color: #e3e1ef;
   font-family: 'Atkinson Hyperlegible', sans-serif;
   min-height: 100vh;
   margin: 0;
@@ -73,9 +67,332 @@ body {
   background: transparent;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2c2c3a;
+  background: #cbd0e2;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
+  background: #aab0c8;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #2c2c3a;
+}
+html.dark ::-webkit-scrollbar-thumb:hover {
   background: #4a4a62;
+}
+
+/* ==========================================================================
+   LIGHT MODE SENSORY-SAFE THEME (DEFAULT)
+   Gentle, neuro-affirming pastel surfaces, AAA high legibility, zero glare
+   ========================================================================== */
+
+html.light body,
+html:not(.dark) body {
+  background-color: #f6f7fb;
+  color: #1e1e2f;
+}
+
+/* Canvas & Root Surfaces */
+html.light .bg-\[\#101014\],
+html:not(.dark) .bg-\[\#101014\] {
+  background-color: #f6f7fb !important;
+}
+
+html.light .bg-\[\#12121c\],
+html:not(.dark) .bg-\[\#12121c\] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-\[\#12121c\]\/85,
+html:not(.dark) .bg-\[\#12121c\]\/85 {
+  background-color: rgba(255, 255, 255, 0.90) !important;
+}
+
+html.light .bg-\[\#12121c\]\/90,
+html:not(.dark) .bg-\[\#12121c\]\/90 {
+  background-color: rgba(255, 255, 255, 0.93) !important;
+}
+
+html.light .bg-\[\#161620\],
+html:not(.dark) .bg-\[\#161620\] {
+  background-color: #f1f3f9 !important;
+}
+
+html.light .bg-\[\#161622\],
+html:not(.dark) .bg-\[\#161622\] {
+  background-color: #ffffff !important;
+}
+
+/* Cards & Drawers */
+html.light .bg-\[\#1b1b25\],
+html:not(.dark) .bg-\[\#1b1b25\] {
+  background-color: #ffffff !important;
+}
+
+html.light .bg-\[\#1f1f29\],
+html:not(.dark) .bg-\[\#1f1f29\] {
+  background-color: #f8f9fd !important;
+}
+
+/* Elevated Containers & Buttons */
+html.light .bg-\[\#1f1f2e\],
+html:not(.dark) .bg-\[\#1f1f2e\] {
+  background-color: #f0f2f8 !important;
+}
+
+html.light .bg-\[\#1f1f2e\]\/50,
+html:not(.dark) .bg-\[\#1f1f2e\]\/50 {
+  background-color: rgba(240, 242, 248, 0.55) !important;
+}
+
+html.light .bg-\[\#1f1f2e\]\/60,
+html:not(.dark) .bg-\[\#1f1f2e\]\/60 {
+  background-color: rgba(240, 242, 248, 0.65) !important;
+}
+
+html.light .bg-\[\#1f1f2e\]\/70,
+html:not(.dark) .bg-\[\#1f1f2e\]\/70 {
+  background-color: rgba(240, 242, 248, 0.75) !important;
+}
+
+html.light .bg-\[\#1f1f2e\]\/80,
+html:not(.dark) .bg-\[\#1f1f2e\]\/80 {
+  background-color: rgba(240, 242, 248, 0.85) !important;
+}
+
+html.light .bg-\[\#252536\],
+html:not(.dark) .bg-\[\#252536\] {
+  background-color: #e4e7f2 !important;
+}
+
+html.light .bg-\[\#292933\],
+html:not(.dark) .bg-\[\#292933\] {
+  background-color: #edf0f8 !important;
+}
+
+html.light .bg-\[\#292933\]\/70,
+html:not(.dark) .bg-\[\#292933\]\/70 {
+  background-color: rgba(237, 240, 248, 0.88) !important;
+}
+
+/* Light Mode Soft Card Gradients */
+html.light .from-\[\#1f1d2e\],
+html:not(.dark) .from-\[\#1f1d2e\] {
+  --tw-gradient-from: #f4f0fe !important;
+}
+html.light .via-\[\#1b1b25\],
+html:not(.dark) .via-\[\#1b1b25\] {
+  --tw-gradient-stops: var(--tw-gradient-from), #ffffff, var(--tw-gradient-to) !important;
+}
+html.light .to-\[\#12121c\],
+html:not(.dark) .to-\[\#12121c\] {
+  --tw-gradient-to: #f6f7fb !important;
+}
+
+html.light .from-\[\#23213a\],
+html:not(.dark) .from-\[\#23213a\] {
+  --tw-gradient-from: #f5f0ff !important;
+}
+html.light .to-\[\#191928\],
+html:not(.dark) .to-\[\#191928\] {
+  --tw-gradient-to: #eae5fd !important;
+}
+
+html.light .from-\[\#1b2233\],
+html:not(.dark) .from-\[\#1b2233\] {
+  --tw-gradient-from: #edf7ff !important;
+}
+html.light .to-\[\#141825\],
+html:not(.dark) .to-\[\#141825\] {
+  --tw-gradient-to: #e2f0fb !important;
+}
+
+html.light .from-\[\#26221c\],
+html:not(.dark) .from-\[\#26221c\] {
+  --tw-gradient-from: #fff9ea !important;
+}
+html.light .to-\[\#1a1714\],
+html:not(.dark) .to-\[\#1a1714\] {
+  --tw-gradient-to: #fbf1d6 !important;
+}
+
+html.light .from-\[\#17251d\],
+html:not(.dark) .from-\[\#17251d\] {
+  --tw-gradient-from: #edf9f2 !important;
+}
+html.light .to-\[\#141b24\],
+html:not(.dark) .to-\[\#141b24\] {
+  --tw-gradient-to: #e0f4e8 !important;
+}
+
+html.light .from-\[\#20172e\],
+html:not(.dark) .from-\[\#20172e\] {
+  --tw-gradient-from: #f7f1ff !important;
+}
+html.light .via-\[\#181d2c\],
+html:not(.dark) .via-\[\#181d2c\] {
+  --tw-gradient-stops: var(--tw-gradient-from), #eef4ff, var(--tw-gradient-to) !important;
+}
+html.light .to-\[\#121922\],
+html:not(.dark) .to-\[\#121922\] {
+  --tw-gradient-to: #f1f7ff !important;
+}
+
+/* Light Mode Text High Legibility */
+html.light .text-\[\#f7f7fa\],
+html:not(.dark) .text-\[\#f7f7fa\] {
+  color: #141522 !important;
+}
+
+html.light .text-\[\#e3e1ef\],
+html:not(.dark) .text-\[\#e3e1ef\] {
+  color: #28293d !important;
+}
+
+html.light .text-\[\#c6c5d5\],
+html:not(.dark) .text-\[\#c6c5d5\] {
+  color: #46495f !important;
+}
+
+html.light .text-\[\#a8adb8\],
+html:not(.dark) .text-\[\#a8adb8\] {
+  color: #5f647c !important;
+}
+
+html.light .text-\[\#bdc2ff\],
+html:not(.dark) .text-\[\#bdc2ff\] {
+  color: #5243b8 !important;
+}
+
+html.light .text-\[\#4cd6fb\],
+html:not(.dark) .text-\[\#4cd6fb\] {
+  color: #007ba3 !important;
+}
+
+html.light .text-\[\#00c2ff\],
+html:not(.dark) .text-\[\#00c2ff\] {
+  color: #007ba3 !important;
+}
+
+html.light .text-\[\#49e095\],
+html:not(.dark) .text-\[\#49e095\] {
+  color: #0b7f48 !important;
+}
+
+html.light .text-\[\#f0c000\],
+html:not(.dark) .text-\[\#f0c000\] {
+  color: #9c6200 !important;
+}
+
+/* Light Mode Borders */
+html.light .border-\[\#2c2c3a\],
+html:not(.dark) .border-\[\#2c2c3a\] {
+  border-color: #e2e5ef !important;
+}
+
+html.light .border-\[\#2c2c3a\]\/50,
+html:not(.dark) .border-\[\#2c2c3a\]\/50 {
+  border-color: rgba(226, 229, 239, 0.65) !important;
+}
+
+html.light .border-\[\#2c2c3a\]\/70,
+html:not(.dark) .border-\[\#2c2c3a\]\/70 {
+  border-color: rgba(226, 229, 239, 0.8) !important;
+}
+
+html.light .border-\[\#22222f\],
+html:not(.dark) .border-\[\#22222f\] {
+  border-color: #eaecf5 !important;
+}
+
+html.light .border-\[\#4a4a62\],
+html:not(.dark) .border-\[\#4a4a62\] {
+  border-color: #cbd0e2 !important;
+}
+
+/* Light Mode Hover Interactions */
+html.light .hover\:bg-\[\#1f1f2e\]:hover,
+html:not(.dark) .hover\:bg-\[\#1f1f2e\]:hover {
+  background-color: #e4e8f4 !important;
+}
+
+html.light .hover\:bg-\[\#252536\]:hover,
+html:not(.dark) .hover\:bg-\[\#252536\]:hover {
+  background-color: #dce1ef !important;
+}
+
+html.light .hover\:text-white:hover,
+html:not(.dark) .hover\:text-white:hover {
+  color: #0f1019 !important;
+}
+
+html.light .hover\:text-\[\#f7f7fa\]:hover,
+html:not(.dark) .hover\:text-\[\#f7f7fa\]:hover {
+  color: #0f1019 !important;
+}
+
+/* Light Mode Shadows */
+html.light .shadow-\[0_16px_36px_rgba\(0\,0\,0\,0\.7\)\],
+html:not(.dark) .shadow-\[0_16px_36px_rgba\(0\,0\,0\,0\.7\)\] {
+  box-shadow: 0 16px 36px rgba(45, 52, 70, 0.12) !important;
+}
+
+html.light .shadow-\[0_8px_24px_rgba\(0\,0\,0\,0\.6\)\],
+html:not(.dark) .shadow-\[0_8px_24px_rgba\(0\,0\,0\,0\.6\)\] {
+  box-shadow: 0 8px 24px rgba(45, 52, 70, 0.10) !important;
+}
+
+html.light .shadow-\[0_8px_24px_rgba\(0\,0\,0\,0\.35\)\],
+html:not(.dark) .shadow-\[0_8px_24px_rgba\(0\,0\,0\,0\.35\)\] {
+  box-shadow: 0 8px 24px rgba(45, 52, 70, 0.08) !important;
+}
+
+html.light .shadow-\[0_-4px_16px_rgba\(0\,0\,0\,0\.45\)\],
+html:not(.dark) .shadow-\[0_-4px_16px_rgba\(0\,0\,0\,0\.45\)\] {
+  box-shadow: 0 -4px 16px rgba(45, 52, 70, 0.06) !important;
+}
+
+html.light .shadow-\[0_1px_8px_rgba\(0\,0\,0\,0\.25\)\],
+html:not(.dark) .shadow-\[0_1px_8px_rgba\(0\,0\,0\,0\.25\)\] {
+  box-shadow: 0 1px 8px rgba(45, 52, 70, 0.06) !important;
+}
+
+html.light .shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.8\)\],
+html:not(.dark) .shadow-\[0_20px_50px_rgba\(0\,0\,0\,0\.8\)\] {
+  box-shadow: 0 20px 50px rgba(45, 52, 70, 0.16) !important;
+}
+
+/* Modals & Dialog backdrop */
+html.light .bg-black\/75,
+html:not(.dark) .bg-black\/75 {
+  background-color: rgba(18, 20, 32, 0.45) !important;
+}
+
+html.light .bg-black\/80,
+html:not(.dark) .bg-black\/80 {
+  background-color: rgba(18, 20, 32, 0.45) !important;
+}
+
+html.light .bg-black\/85,
+html:not(.dark) .bg-black\/85 {
+  background-color: rgba(18, 20, 32, 0.45) !important;
+}
+
+/* Inputs and Forms in Light Mode */
+html.light input,
+html.light textarea,
+html.light select,
+html:not(.dark) input,
+html:not(.dark) textarea,
+html:not(.dark) select {
+  background-color: #ffffff !important;
+  color: #141522 !important;
+  border-color: #cbd0e2 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder,
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #8288a2 !important;
 }

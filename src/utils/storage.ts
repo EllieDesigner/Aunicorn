@@ -15,6 +15,7 @@ const DEFAULT_PROFILE: UserProfile = {
   stateText: 'Calmed • Low Stim',
   spoons: 3,
   maxSpoons: 5,
+  theme: 'light',
   lowStimMode: false,
   soundEnabled: true,
   brownNoiseVolume: 0.35,
@@ -159,10 +160,26 @@ export const storage = {
   getProfile(): UserProfile {
     try {
       const stored = localStorage.getItem(STORAGE_KEYS.USER_PROFILE);
-      return stored ? { ...DEFAULT_PROFILE, ...JSON.parse(stored) } : DEFAULT_PROFILE;
+      const parsed = stored ? JSON.parse(stored) : {};
+      return {
+        ...DEFAULT_PROFILE,
+        ...parsed,
+        theme: (parsed.theme === 'dark' || parsed.theme === 'light') ? parsed.theme : 'light',
+      };
     } catch {
       return DEFAULT_PROFILE;
     }
+  },
+
+  getTheme(): 'light' | 'dark' {
+    const profile = this.getProfile();
+    return profile.theme || 'light';
+  },
+
+  saveTheme(theme: 'light' | 'dark') {
+    const profile = this.getProfile();
+    profile.theme = theme;
+    this.saveProfile(profile);
   },
 
   saveProfile(profile: UserProfile) {

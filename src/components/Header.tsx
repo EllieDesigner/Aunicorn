@@ -3,6 +3,8 @@ import { ActiveTab } from '../types';
 
 interface HeaderProps {
   activeTab: ActiveTab;
+  theme: 'light' | 'dark';
+  onSelectTheme: (theme: 'light' | 'dark') => void;
   onOpenDrawer: () => void;
   onOpenSensoryReset: () => void;
   onOpenPreferences: () => void;
@@ -10,6 +12,8 @@ interface HeaderProps {
 
 export const Header: React.FC<HeaderProps> = ({
   activeTab,
+  theme,
+  onSelectTheme,
   onOpenDrawer,
   onOpenSensoryReset,
   onOpenPreferences,
@@ -61,14 +65,27 @@ export const Header: React.FC<HeaderProps> = ({
           </h1>
         </div>
 
-        {/* Right: Sensory Quick Reset Pill + User Avatar */}
-        <div className="flex items-center gap-2">
+        {/* Right: Theme Toggle + Sensory Quick Reset Pill + User Avatar */}
+        <div className="flex items-center gap-1.5 sm:gap-2">
+          <button
+            type="button"
+            id="header-theme-toggle"
+            onClick={() => onSelectTheme(theme === 'light' ? 'dark' : 'light')}
+            title={`Switch to ${theme === 'light' ? 'Dark Mode' : 'Light Mode'}`}
+            aria-label={`Switch to ${theme === 'light' ? 'Dark Mode' : 'Light Mode'}`}
+            className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full bg-[#1f1f2e] border border-[#2c2c3a] text-[#8f5fe8] hover:bg-[#252536] hover:border-[#8f5fe8]/50 transition-all focus:outline-none focus:ring-2 focus:ring-[#8f5fe8] cursor-pointer"
+          >
+            <span className="material-symbols-outlined text-[19px]">
+              {theme === 'light' ? 'dark_mode' : 'light_mode'}
+            </span>
+          </button>
+
           <button
             type="button"
             id="header-sensory-reset"
             onClick={onOpenSensoryReset}
             title="Sensory Quick Reset"
-            className="h-10 px-3 flex items-center gap-1.5 rounded-full bg-[#1f1f2e] border border-[#00c2ff]/30 text-[#00c2ff] hover:bg-[#252536] hover:border-[#00c2ff]/60 transition-all focus:outline-none focus:ring-2 focus:ring-[#00c2ff]"
+            className="h-9 sm:h-10 px-2.5 sm:px-3 flex items-center gap-1.5 rounded-full bg-[#1f1f2e] border border-[#00c2ff]/30 text-[#00c2ff] hover:bg-[#252536] hover:border-[#00c2ff]/60 transition-all focus:outline-none focus:ring-2 focus:ring-[#00c2ff]"
           >
             <span className="material-symbols-outlined text-[18px]">spa</span>
             <span className="text-[13px] font-semibold hidden sm:inline">Reset</span>
@@ -79,9 +96,9 @@ export const Header: React.FC<HeaderProps> = ({
             id="header-user-profile"
             onClick={onOpenPreferences}
             aria-label="User Profile & Preferences"
-            className="w-10 h-10 flex items-center justify-center rounded-full hover:ring-2 hover:ring-[#bdc2ff] transition-all focus:outline-none"
+            className="w-9 h-9 sm:w-10 sm:h-10 flex items-center justify-center rounded-full hover:ring-2 hover:ring-[#bdc2ff] transition-all focus:outline-none"
           >
-            <div className="w-8 h-8 rounded-full bg-[#bdc2ff] text-[#121f8b] flex items-center justify-center font-bold text-xs shadow-sm">
+            <div className="w-8 h-8 rounded-full bg-[#5e6ad2] text-white flex items-center justify-center font-bold text-xs shadow-sm">
               <span className="material-symbols-outlined text-[18px]">person</span>
             </div>
           </button>

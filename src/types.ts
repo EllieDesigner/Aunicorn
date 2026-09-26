@@ -45,6 +45,7 @@ export interface UserProfile {
   stateText: string;
   spoons: SpoonLevel;
   maxSpoons: number;
+  theme?: 'light' | 'dark';
   lowStimMode: boolean;
   soundEnabled: boolean;
   brownNoiseVolume: number;
